@@ -1,6 +1,7 @@
-int a = 0;
+int a = 1000;
+int a2 = 1500;
 int b = 0;
-int c = 400;
+int c = 300;
 
 int x = 1;
 int y = 250;
@@ -12,38 +13,45 @@ void setup(){
 }
 void draw(){
    background(0);
-   //for (int i = 0; i > 1; i++){
-     fill(0,0,255);
-     rect(a,b,100,100);
-     fill(0,255,0);
-     rect(a,c,100,100);
-     a += 1;
-     if (a == 1000){
-     b += 1;
-     c += 1;
-     a = 0;
-     }
-     //player (the bird) 
+   
+   //the block
+   // block one
+   a -= 2;
+   fill(0,0,255);
+   rect(a,b,100,200);
+   fill(0,255,0);
+   rect(a,c,100,200);
+   if (a < -100){
+    a = 1000; 
+   }
+   //block two
+   a2 -= 2;
+   fill(0,0,255);
+   rect(a2,b,100,200);
+   fill(0,255,0);
+   rect(a2,c,100,200);
+   if (a2 < -100){
+     a2 = 1500;
+   }
+   
+   //player (the bird) 
+    if (keyPressed){
+      if (key == 'a'){
+        for (int i = 0; i < 10; i++){
+          y += -2;
+        }
+      }
+    }else{
+           y += 2;
+    }
+     //reset the bird
+    if (y < 0 || y > 500){
+      y = 250;
+    }
+    fill(255,0,0);
+    rect(x,y,10,10);
      
-     if (keyPressed){
-       if (key == 'a'){
-         for (int i = 0; i < 10; i++){
-           y += -2;
-         }
-       }
-     }else{
-            y += 2;
-     }
      
-     if (y < 0 || y > 500){
-       y = 250;
-     }
-     fill(255,0,0);
-     rect(x,y,10,10);
-     
-     if (x == a+100 || y == b+100){
-       println ("game over");
-     }
      
   //}
    /*if (mouseButton ==RIGHT){
