@@ -14,7 +14,6 @@ void setup(){
 }
 void draw(){
    background(0);
-   println(k);
    //player (the bird) 
    if (keyPressed){
      if (key == ' '){               //player only press space once and get one response
@@ -24,6 +23,8 @@ void draw(){
       for (int i = 0; i < 20; i++){
                 y += -4;
               }  
+     }else{
+       y += 2;    //no flowing
      }
    }else{
            y += 2;
