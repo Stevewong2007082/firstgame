@@ -31,7 +31,7 @@ void draw(){
    fill(0,255,0);
    rect(a2,c,100,200);
    if (a2 < -100){
-     a2 = 1500;
+     a2 = 1000;
    }
    
    //player (the bird) 
