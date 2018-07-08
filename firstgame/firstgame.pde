@@ -15,12 +15,11 @@ void setup(){
 void draw(){
    background(0);
    println(k);
-      //player (the bird) 
+   //player (the bird) 
    if (keyPressed){
-     if (key == ' '){
+     if (key == ' '){               //player only press space once and get one response
        k += 1;  
      }
-     
      if (k == 1){
       for (int i = 0; i < 20; i++){
                 y += -4;
