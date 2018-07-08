@@ -5,6 +5,7 @@ int c = 300;
 
 int x = 1;
 int y = 250;
+int k = 0;
 
 void setup(){ 
   size(1000,500);
@@ -13,6 +14,32 @@ void setup(){
 }
 void draw(){
    background(0);
+   println(k);
+      //player (the bird) 
+   if (keyPressed){
+     if (key == ' '){
+       k += 1;  
+     }
+     
+     if (k == 1){
+      for (int i = 0; i < 20; i++){
+                y += -4;
+              }  
+     }
+   }else{
+           y += 2;
+   }
+    if (keyPressed == false){
+       k = 0; 
+   }
+     
+   //reset the bird
+   if (y < 0 || y > 500){
+     y = 250;
+   }
+   fill(255,0,0);
+   rect(x,y,10,10);
+    
    
    //the block
    // block one
@@ -33,28 +60,6 @@ void draw(){
    if (a2 < -100){
      a2 = 1000;
    }
-   
-   //player (the bird) 
-    if (keyPressed){
-      if (key == 'a'){
-        for (int i = 0; i < 10; i++){
-          y += -2;
-        }
-      }
-    }else{
-           y += 2;
-    }
-     //reset the bird
-    if (y < 0 || y > 500){
-      y = 250;
-    }
-    fill(255,0,0);
-    rect(x,y,10,10);
      
-     
-     
-  //}
-   /*if (mouseButton ==RIGHT){
-     background(0);
-   }*/
+
 }
